@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Work Sans", sans-serif;
+  background: #24292e;
+  color: #ffffff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+li {
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: none;
+  background: #31363f;
+  font-size: 1.8rem;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-family: "Work Sans", sans-serif;
+}
+
+::-webkit-input-placeholder {
+  color: #6a7372;
+}
+
+:-ms-input-placeholder {
+  color: #6a7372;
+}
+
+::-ms-input-placeholder {
+  color: #6a7372;
+}
+
+::placeholder {
+  color: #6a7372;
+}
+
+:-ms-input-placeholder {
+  color: #6a7372;
+}
+
+::-ms-input-placeholder {
+  color: #6a7372;
+}
+
+button {
+  border: none;
+  background: #39c959;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 1rem 2.5rem;
+  font-size: 1.8rem;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #2fac4b;
+  cursor: pointer;
+}
+
+.desktop-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 10vh;
+  min-height: 7rem;
+  margin: 0rem 8rem;
+  position: relative;
+}
+
+.desktop-nav #logo {
+  height: 2.4rem;
+  position: absolute;
+  left: 0;
+  margin-bottom: 0.4rem;
+}
+
+.desktop-nav .desktop-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: absolute;
+  right: 0;
+}
+
+.desktop-nav .desktop-menu li {
+  font-weight: 600;
+  padding: 1rem;
+  margin: 0rem 1rem;
+}
+
+.desktop-nav .desktop-menu li .inactive {
+  color: #6a7372;
+}
+
+.desktop-nav .desktop-menu li .inactive:hover {
+  color: #ffffff;
+}
+
+.desktop-nav .desktop-menu .tutorial {
+  padding-right: 0rem;
+  margin-right: 0rem;
+}
+
+.hero .app {
+  height: 22vh;
+  min-height: 18rem;
+  background: #1b1d23;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .app input {
+  width: 60rem;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.hero .app button {
+  border-radius: 0px 6px 6px 0px;
+  margin-left: 0.5rem;
+}
+
+.hero .how-to {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 7rem 0rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.hero .how-to .line {
+  height: 4rem;
+  width: 3px;
+  background: #1b1d23;
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
+}
+
+.hero .how-to .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 35rem;
+  text-align: center;
+  -webkit-transform: translateX(-3px);
+          transform: translateX(-3px);
+  margin: 0.5rem 0rem;
+}
+
+.hero .how-to .step .number {
+  padding: 1.1rem 1.7rem;
+  background: #31363f;
+  border-radius: 90px;
+}
+
+.hero .how-to .step .desc {
+  padding: 1rem;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+}
+
+.hero .how-to .step1 {
+  margin-top: 4rem;
+}
+/*# sourceMappingURL=style.css.map */

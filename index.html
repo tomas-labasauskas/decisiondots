@@ -3,7 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="robots" content="index,follow" />
+    <meta
+      name="description"
+      content="Decision Dots - app that helps you decide. Use logic and pure math in your next decision making process. Free personal decision support system."
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./img/favicon.svg" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>DecisionDots | App</title>
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <nav class="desktop-nav">
+        <img id="logo" src="./img/Logo.svg" alt="Decision Dots logo." />
+        <ul class="desktop-menu">
+          <li><a href="./">HOME</a></li>
+          <li class="tutorial"><a class="inactive" href="./">TUTORIAL</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="app">
+        <div class="question">
+          <input type="text" placeholder="What is your question today?" />
+          <button>START</button>
+        </div>
+      </div>
+
+      <div class="how-to">
+        <h1>How to use DecisionDots?</h1>
+        <div class="step step1">
+          <h2 class="number">1</h2>
+          <h2 class="desc">
+            Write down the question / problem you need to solve.
+          </h2>
+        </div>
+        <div class="line"></div>
+        <div class="step step2">
+          <h2 class="number">2</h2>
+          <h2 class="desc">
+            Choose up to 8 options - possible sollutions to the problem.
+          </h2>
+        </div>
+        <div class="line"></div>
+        <div class="step step3">
+          <h2 class="number">3</h2>
+          <h2 class="desc">
+            List pros and cons of each option with the weight of importance.
+          </h2>
+        </div>
+        <div class="line"></div>
+        <div class="step step4">
+          <h2 class="number">4</h2>
+          <h2 class="desc">
+            Find out what is the best option according to math.
+          </h2>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

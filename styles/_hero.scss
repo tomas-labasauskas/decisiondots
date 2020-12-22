@@ -1,0 +1,53 @@
+.hero {
+  .app {
+    height: 22vh;
+    min-height: 18rem;
+    background: $darker;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      width: 60rem;
+      border-radius: 6px 0px 0px 6px;
+    }
+    button {
+      border-radius: 0px 6px 6px 0px;
+      margin-left: 0.5rem;
+    }
+  }
+  .how-to {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 7rem 0rem;
+    color: rgba(255, 255, 255, 0.5);
+    .line {
+      height: 4rem;
+      width: 3px;
+      background: $darker;
+      transform: translateX(-3px);
+    }
+    .step {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      max-width: 35rem;
+      text-align: center;
+      transform: translateX(-3px);
+      margin: 0.5rem 0rem;
+      .number {
+        padding: 1.1rem 1.7rem;
+        background: $input;
+        border-radius: 90px;
+      }
+      .desc {
+        padding: 1rem;
+        transform: translateY(2px);
+      }
+    }
+    .step1 {
+      margin-top: 4rem;
+    }
+  }
+}

@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Work Sans", sans-serif;
+  background: $dark;
+  color: $text;
+  transition: all 0.2s ease-in-out;
+}
+
+// font-family: 'Work Sans', sans-serif;
+// regular weight: 400
+// semi-bold weight: 600
+
+h1 {
+  font-size: 1.8rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.6rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 400;
+}
+
+li {
+  font-size: 1.8rem;
+}
+
+a {
+  text-decoration: none;
+  color: $text;
+}
+
+ul {
+  list-style: none;
+}
+
+input {
+  border: none;
+  background: $input;
+  font-size: 1.8rem;
+  color: $text;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  font-family: "Work Sans", sans-serif;
+}
+::placeholder {
+  color: $text-inactive;
+}
+:-ms-input-placeholder {
+  color: $text-inactive;
+}
+::-ms-input-placeholder {
+  color: $text-inactive;
+}
+
+button {
+  border: none;
+  background: $dot;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 600;
+  color: $text;
+  padding: 1rem 2.5rem;
+  font-size: 1.8rem;
+  border-radius: 6px;
+  &:hover {
+    background: $dot-active;
+    cursor: pointer;
+  }
+}
