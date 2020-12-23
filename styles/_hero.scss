@@ -4,15 +4,31 @@
     min-height: 18rem;
     background: $darker;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    .page2-title {
+      font-size: 2.2rem;
+      padding: 2rem 4rem;
+      background: $dark;
+      border-radius: 6px;
+      position: absolute;
+      top: 40px;
+    }
+
+    .error-message {
+      color: $dot;
+      font-size: 1.4rem;
+      margin: 1.5rem;
+    }
     input {
       width: 60rem;
       border-radius: 6px 0px 0px 6px;
     }
     button {
       border-radius: 0px 6px 6px 0px;
-      margin-left: 0.5rem;
+      margin-left: 0.4rem;
     }
   }
   .how-to {

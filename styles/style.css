@@ -154,12 +154,32 @@ button:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+.hero .app .page2-title {
+  font-size: 2.2rem;
+  padding: 2rem 4rem;
+  background: #24292e;
+  border-radius: 6px;
+  position: absolute;
+  top: 40px;
+}
+
+.hero .app .error-message {
+  color: #39c959;
+  font-size: 1.4rem;
+  margin: 1.5rem;
 }
 
 .hero .app input {
@@ -169,7 +189,7 @@ button:hover {
 
 .hero .app button {
   border-radius: 0px 6px 6px 0px;
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
 }
 
 .hero .how-to {
