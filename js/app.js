@@ -29,7 +29,10 @@ function page2() {
     // generates the page 2
   } else {
     const error = document.querySelector(".error-message");
-    error.parentNode.removeChild(error);
+    if (error === null) {
+    } else {
+      error.parentNode.removeChild(error);
+    }
     howTo.parentNode.removeChild(howTo);
     qInput.parentNode.removeChild(qInput);
     startBtn.parentNode.removeChild(startBtn);
