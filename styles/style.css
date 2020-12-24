@@ -147,6 +147,16 @@ button:hover {
   margin-right: 0rem;
 }
 
+.hero #app-full {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.hero #app-full .options {
+  margin-top: 15rem;
+}
+
 .hero .app {
   height: 22vh;
   min-height: 18rem;
@@ -187,7 +197,7 @@ button:hover {
   border-radius: 6px 0px 0px 6px;
 }
 
-.hero .app button {
+.hero .app .start {
   border-radius: 0px 6px 6px 0px;
   margin-left: 0.4rem;
 }
@@ -249,5 +259,66 @@ button:hover {
 
 .hero .how-to .step1 {
   margin-top: 4rem;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.options .option .op-inp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.options .option .op-inp .inp {
+  border-radius: 6px;
+  margin: 1rem;
+}
+
+.options .option .op-inp .numb {
+  padding: 1.1rem 1.7rem;
+  margin: 1rem;
+  background: #31363f;
+  border-radius: 90px;
+}
+
+.options .option .break-line {
+  width: 96%;
+  height: 3px;
+  background: #24292e;
+  margin: 1.5rem;
+}
+
+#add-button {
+  background: #505356;
+  font-weight: 600;
+  margin: 2rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 6px;
+}
+
+#add-button:hover {
+  background: #3b3e41;
+}
+
+#page3-button {
+  border-radius: 6px;
+  padding: 1.2rem 2.5rem;
+  margin-top: 8rem;
 }
 /*# sourceMappingURL=style.css.map */

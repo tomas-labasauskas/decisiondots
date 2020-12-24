@@ -1,4 +1,10 @@
 .hero {
+  #app-full {
+    justify-content: start;
+    .options {
+      margin-top: 15rem;
+    }
+  }
   .app {
     height: 22vh;
     min-height: 18rem;
@@ -26,7 +32,7 @@
       width: 60rem;
       border-radius: 6px 0px 0px 6px;
     }
-    button {
+    .start {
       border-radius: 0px 6px 6px 0px;
       margin-left: 0.4rem;
     }
