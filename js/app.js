@@ -131,14 +131,17 @@ function addOption() {
   optionName.appendChild(opInpDivName);
   options.appendChild(optionName);
   // expand app element
+  if (index === 4) {
+    appDiv.style.height = "90rem";
+  }
   if (index === 5) {
-    appDiv.style.height = "100vh";
+    appDiv.style.height = "95rem";
   }
   if (index === 6) {
-    appDiv.style.height = "110vh";
+    appDiv.style.height = "100rem";
   }
   if (index === 7) {
-    appDiv.style.height = "115vh";
+    appDiv.style.height = "105rem";
   }
   // if there are 8 options - remove the add button
   let addBtn = document.querySelector("#add-button");
