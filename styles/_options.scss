@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .option {
     .op-inp {
       display: flex;
@@ -27,19 +28,84 @@
   }
 }
 
-#add-button {
-  background: #505356;
-  font-weight: 600;
-  margin: 2rem;
-  padding: 0.4rem 1.5rem;
-  border-radius: 6px;
-  &:hover {
-    background: #3b3e41;
+.options.page3 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  .buttons-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -60px;
+    top: 0px;
+    #btn-toggle {
+      background: $input;
+      padding: 1.1rem 1.8rem;
+      margin: 1.6rem 1rem;
+      border-radius: 90px;
+      &:hover {
+        background: $dot-active;
+      }
+      &:focus {
+        background: $dot;
+      }
+    }
   }
-}
-
-#page3-button {
-  border-radius: 6px;
-  padding: 1.2rem 2.5rem;
-  margin-top: 8rem;
+  .pro-table-container {
+    display: flex;
+    flex-direction: column;
+    .pro-table {
+      width: 65rem;
+      height: 60rem;
+      margin: 0rem 2rem;
+      background: $dark;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      h2 {
+        font-weight: 600;
+        margin: 2rem;
+        font-size: 1.8rem;
+      }
+      .pro-con {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0rem 1.2rem;
+        height: 90%;
+        .pros,
+        .cons {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 100%;
+          .pro,
+          .con {
+            display: flex;
+            flex-direction: row;
+            margin-top: 0.5rem;
+            margin-bottom: 1.8rem;
+            margin-left: 0.9rem;
+            .pro-inp,
+            .con-inp {
+              width: 66%;
+              margin: 0.5rem;
+              border-radius: 6px;
+              border-radius: 6px 0px 0px 6px;
+            }
+            .pro-inp-w,
+            .con-inp-w {
+              width: 24%;
+              margin: 0.5rem;
+              border-radius: 6px;
+              border-radius: 0px 6px 6px 0px;
+            }
+          }
+        }
+      }
+    }
+  }
 }

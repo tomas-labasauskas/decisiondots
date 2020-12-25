@@ -177,6 +177,24 @@ button:hover {
   position: relative;
 }
 
+.hero .app #add-button {
+  background: #505356;
+  font-weight: 600;
+  margin: 2rem;
+  padding: 0.4rem 1.5rem;
+  border-radius: 6px;
+}
+
+.hero .app #add-button:hover {
+  background: #3b3e41;
+}
+
+.hero .app #page3-button {
+  border-radius: 6px;
+  padding: 1.2rem 2.5rem;
+  margin-top: 8rem;
+}
+
 .hero .app .page2-title {
   font-size: 2.2rem;
   padding: 2rem 4rem;
@@ -304,21 +322,152 @@ button:hover {
   margin: 1.5rem;
 }
 
-#add-button {
-  background: #505356;
+.options.page3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+}
+
+.options.page3 .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  left: -60px;
+  top: 0px;
+}
+
+.options.page3 .buttons-container #btn-toggle {
+  background: #31363f;
+  padding: 1.1rem 1.8rem;
+  margin: 1.6rem 1rem;
+  border-radius: 90px;
+}
+
+.options.page3 .buttons-container #btn-toggle:hover {
+  background: #2fac4b;
+}
+
+.options.page3 .buttons-container #btn-toggle:focus {
+  background: #39c959;
+}
+
+.options.page3 .pro-table-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.options.page3 .pro-table-container .pro-table {
+  width: 65rem;
+  height: 60rem;
+  margin: 0rem 2rem;
+  background: #24292e;
+  border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.options.page3 .pro-table-container .pro-table h2 {
   font-weight: 600;
   margin: 2rem;
-  padding: 0.4rem 1.5rem;
-  border-radius: 6px;
+  font-size: 1.8rem;
 }
 
-#add-button:hover {
-  background: #3b3e41;
+.options.page3 .pro-table-container .pro-table .pro-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0rem 1.2rem;
+  height: 90%;
 }
 
-#page3-button {
+.options.page3 .pro-table-container .pro-table .pro-con .pros,
+.options.page3 .pro-table-container .pro-table .pro-con .cons {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.options.page3 .pro-table-container .pro-table .pro-con .pros .pro,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .con,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .pro,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 0.5rem;
+  margin-bottom: 1.8rem;
+  margin-left: 0.9rem;
+}
+
+.options.page3 .pro-table-container .pro-table .pro-con .pros .pro .pro-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .pro .con-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .con .pro-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .con .con-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .pro .pro-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .pro .con-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .con .pro-inp,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .con .con-inp {
+  width: 66%;
+  margin: 0.5rem;
   border-radius: 6px;
-  padding: 1.2rem 2.5rem;
-  margin-top: 8rem;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.options.page3 .pro-table-container .pro-table .pro-con .pros .pro .pro-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .pro .con-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .con .pro-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .pros .con .con-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .pro .pro-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .pro .con-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .con .pro-inp-w,
+.options.page3 .pro-table-container .pro-table .pro-con .cons .con .con-inp-w {
+  width: 24%;
+  margin: 0.5rem;
+  border-radius: 6px;
+  border-radius: 0px 6px 6px 0px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -94,7 +94,7 @@ function page2() {
     // on click - add option
     addBtn.addEventListener("click", addOption);
     // create the third page
-    page3Btn.addEventListener("click", page3);
+    page3Btn.addEventListener("click", page3Check);
   }
 }
 
@@ -150,6 +150,128 @@ function addOption() {
   }
 }
 
-function page3() {
-  console.log("page 3");
+// check if all options have values
+function page3Check() {
+  const optionsList = document.querySelectorAll(".inp");
+  const options = Array.prototype.slice.call(optionsList);
+  options.forEach((opt) => {
+    while (opt.value === "") {
+      if (document.querySelector(".error-message") === null) {
+        const errM = document.createElement("p");
+        errM.innerText = "Fill all of the options!";
+        errM.classList.add("error-message");
+        appDiv.appendChild(errM);
+      }
+      break;
+    }
+  });
+  page3Generator();
+}
+
+function page3Generator() {
+  // take all of the input values
+  const optionsDiv = document.querySelector(".options");
+  const optionDivs = document.querySelectorAll(".option");
+  const optionsList = document.querySelectorAll(".inp");
+  const allBtns = document.querySelectorAll("button");
+  const options = Array.prototype.slice.call(optionsList);
+
+  optionsDiv.classList.add("page3");
+
+  // removes all buttons from page 2
+  allBtns.forEach((btn) => {
+    btn.parentNode.removeChild(btn);
+  });
+
+  // create buttons conttainer
+  const btnsDiv = document.createElement("div");
+  btnsDiv.classList.add("buttons-container");
+  optionsDiv.appendChild(btnsDiv);
+
+  // create tables container
+  const proTableContainer = document.createElement("div");
+  proTableContainer.classList.add("pro-table-container");
+  optionsDiv.appendChild(proTableContainer);
+
+  let index = 0;
+  // create a table for each value
+  options.forEach((opt) => {
+    const option = opt.value;
+    index = index + 1;
+    // console.log(index, option);
+
+    //create the number button
+    const numberBtn = document.createElement("button");
+    numberBtn.innerText = index;
+    numberBtn.id = "btn-toggle";
+    btnsDiv.appendChild(numberBtn);
+
+    // create the table div
+    const prosTableDiv = document.createElement("div");
+    prosTableDiv.classList.add("pro-table");
+    proTableContainer.appendChild(prosTableDiv);
+
+    //create the option title
+    const title = document.createElement("h2");
+    title.innerText = option;
+    prosTableDiv.appendChild(title);
+
+    // create pro-con div
+    const proConDiv = document.createElement("div");
+    proConDiv.classList.add("pro-con");
+    prosTableDiv.appendChild(proConDiv);
+
+    // create pros div
+    const prosDiv = document.createElement("div");
+    prosDiv.classList.add("pros");
+    proConDiv.appendChild(prosDiv);
+
+    // create cons div
+    const consDiv = document.createElement("div");
+    consDiv.classList.add("cons");
+    proConDiv.appendChild(consDiv);
+
+    let someTimes = 1;
+    while (someTimes < 8) {
+      // creates 7 pros
+      const pro = document.createElement("div");
+      pro.classList.add("pro");
+      prosDiv.appendChild(pro);
+      const proInp = document.createElement("input");
+      proInp.classList.add("pro-inp");
+      proInp.placeholder = "Pro ...";
+      pro.appendChild(proInp);
+      const proInpW = document.createElement("input");
+      proInpW.classList.add("pro-inp-w");
+      proInpW.placeholder = "1-10";
+      pro.appendChild(proInpW);
+
+      // create 7 cons
+      const con = document.createElement("div");
+      con.classList.add("con");
+      consDiv.appendChild(con);
+      const conInp = document.createElement("input");
+      conInp.classList.add("con-inp");
+      conInp.placeholder = "Con ...";
+      con.appendChild(conInp);
+      const conInpW = document.createElement("input");
+      conInpW.classList.add("con-inp-w");
+      conInpW.placeholder = "1-10";
+      con.appendChild(conInpW);
+      someTimes = someTimes + 1;
+    }
+
+    // display only the first option table
+    if (index === 1) {
+      prosTableDiv.style.display = "block";
+      numberBtn.style.background = "#39c959";
+    } else {
+      prosTableDiv.style.display = "none";
+    }
+  });
+
+  // removes initial option inputs
+  optionDivs.forEach((option) => {
+    option.parentNode.removeChild(option);
+  });
 }
