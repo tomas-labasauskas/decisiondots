@@ -5,6 +5,7 @@ const qInput = document.querySelector(".question input");
 const startBtn = document.querySelector(".start");
 const howTo = document.querySelector(".how-to");
 const qDiv = document.querySelector(".question");
+const header = document.querySelector(".desktop-nav");
 
 // EVENT LISTENERS
 
@@ -154,20 +155,32 @@ function addOption() {
 function page3Check() {
   const optionsList = document.querySelectorAll(".inp");
   const options = Array.prototype.slice.call(optionsList);
+  let nullCount = 0;
   options.forEach((opt) => {
-    while (opt.value === "") {
-      if (document.querySelector(".error-message") === null) {
-        const errM = document.createElement("p");
-        errM.innerText = "Fill all of the options!";
-        errM.classList.add("error-message");
-        appDiv.appendChild(errM);
-      }
-      break;
+    if (opt.value === "") {
+      nullCount = nullCount + 1;
     }
   });
-  page3Generator();
+
+  if (nullCount > 0) {
+    if (document.querySelector(".error-message") === null) {
+      const errM = document.createElement("p");
+      errM.innerText = "Fill all of the options!";
+      errM.classList.add("error-message");
+      appDiv.appendChild(errM);
+    }
+  } else {
+    // if there is an error message remove  it before loading next page
+    if (document.querySelector(".error-message") !== null) {
+      const erM = document.querySelector(".error-message");
+      erM.parentNode.removeChild(erM);
+    }
+
+    page3Generator();
+  }
 }
 
+// generate page 3
 function page3Generator() {
   // take all of the input values
   const optionsDiv = document.querySelector(".options");
@@ -175,6 +188,8 @@ function page3Generator() {
   const optionsList = document.querySelectorAll(".inp");
   const allBtns = document.querySelectorAll("button");
   const options = Array.prototype.slice.call(optionsList);
+
+  appDiv.style.height = "90vh";
 
   optionsDiv.classList.add("page3");
 
@@ -209,6 +224,7 @@ function page3Generator() {
     // create the table div
     const prosTableDiv = document.createElement("div");
     prosTableDiv.classList.add("pro-table");
+    prosTableDiv.id = "table" + index;
     proTableContainer.appendChild(prosTableDiv);
 
     //create the option title
@@ -244,6 +260,10 @@ function page3Generator() {
       const proInpW = document.createElement("input");
       proInpW.classList.add("pro-inp-w");
       proInpW.placeholder = "1-10";
+      proInpW.type = "number";
+      proInpW.max = "10";
+      proInpW.min = "0";
+      proInpW.step = "0.1";
       pro.appendChild(proInpW);
 
       // create 7 cons
@@ -257,6 +277,10 @@ function page3Generator() {
       const conInpW = document.createElement("input");
       conInpW.classList.add("con-inp-w");
       conInpW.placeholder = "1-10";
+      conInpW.type = "number";
+      conInpW.max = "10";
+      conInpW.min = "0";
+      conInpW.step = "0.1";
       con.appendChild(conInpW);
       someTimes = someTimes + 1;
     }
@@ -274,4 +298,70 @@ function page3Generator() {
   optionDivs.forEach((option) => {
     option.parentNode.removeChild(option);
   });
+
+  // create final button
+  const calcBtn = document.createElement("button");
+  calcBtn.classList.add("calc-btn");
+  calcBtn.innerText = "CALCULATE";
+  calcBtn.type = "submit";
+  appDiv.appendChild(calcBtn);
+
+  // buttons toggle between options
+  const optBtnsList = document.querySelector(".buttons-container").children;
+  const optBtns = Array.prototype.slice.call(optBtnsList);
+  const optsList = document.querySelector(".pro-table-container").children;
+  const opts = Array.prototype.slice.call(optsList);
+
+  optBtns.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      optBtns.forEach((btn) => {
+        btn.style.background = "#31363f";
+      });
+      btn.style.background = "#39c959";
+      const index = "table" + btn.innerText;
+      opts.forEach((opt) => {
+        if (opt.id === index) {
+          opt.style.display = "block";
+        } else {
+          opt.style.display = "none";
+        }
+      });
+    });
+  });
+  calcBtn.addEventListener("click", function () {
+    opts.forEach((opt) => {
+      const prosList = opt.querySelectorAll(".pro-inp-w");
+      const consList = opt.querySelectorAll(".con-inp-w");
+      const pros = Array.prototype.slice.call(prosList);
+      const cons = Array.prototype.slice.call(consList);
+
+      // sum each pros and cons
+      let prosw = 0;
+      pros.forEach((pro) => {
+        if (pro.value !== "") {
+          prosw = prosw + parseFloat(pro.value);
+        }
+      });
+      console.log(opt.id, prosw);
+      let consw = 0;
+      cons.forEach((con) => {
+        if (con.value !== "") {
+          consw = consw + parseFloat(con.value);
+        }
+      });
+      console.log(opt.id, consw);
+      let tablew = 0;
+      if (consw > prosw) {
+        tablew = prosw / consw;
+      } else {
+        tablew = consw / prosw;
+        tablew = 1 - tablew;
+      }
+      console.log(opt.id, tablew);
+    });
+  });
+}
+
+function page4() {
+  console.log("hello there");
 }

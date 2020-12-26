@@ -46,9 +46,6 @@
       &:hover {
         background: $dot-active;
       }
-      &:focus {
-        background: $dot;
-      }
     }
   }
   .pro-table-container {
@@ -65,7 +62,7 @@
       text-align: center;
       h2 {
         font-weight: 600;
-        margin: 2rem;
+        margin: 2rem 1rem;
         font-size: 1.8rem;
       }
       .pro-con {
@@ -102,6 +99,8 @@
               margin: 0.5rem;
               border-radius: 6px;
               border-radius: 0px 6px 6px 0px;
+              -webkit-appearance: none;
+              -moz-appearance: textfield;
             }
           }
         }

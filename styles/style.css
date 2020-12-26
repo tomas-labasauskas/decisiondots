@@ -177,6 +177,11 @@ button:hover {
   position: relative;
 }
 
+.hero .app .calc-btn {
+  margin-top: 2rem;
+  padding: 1.3rem 2rem;
+}
+
 .hero .app #add-button {
   background: #505356;
   font-weight: 600;
@@ -357,10 +362,6 @@ button:hover {
   background: #2fac4b;
 }
 
-.options.page3 .buttons-container #btn-toggle:focus {
-  background: #39c959;
-}
-
 .options.page3 .pro-table-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -389,7 +390,7 @@ button:hover {
 
 .options.page3 .pro-table-container .pro-table h2 {
   font-weight: 600;
-  margin: 2rem;
+  margin: 2rem 1rem;
   font-size: 1.8rem;
 }
 
@@ -469,5 +470,7 @@ button:hover {
   margin: 0.5rem;
   border-radius: 6px;
   border-radius: 0px 6px 6px 0px;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
 }
 /*# sourceMappingURL=style.css.map */

@@ -14,6 +14,10 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    .calc-btn {
+      margin-top: 2rem;
+      padding: 1.3rem 2rem;
+    }
     #add-button {
       background: #505356;
       font-weight: 600;
