@@ -328,37 +328,68 @@ function page3Generator() {
       });
     });
   });
-  calcBtn.addEventListener("click", function () {
-    opts.forEach((opt) => {
-      const prosList = opt.querySelectorAll(".pro-inp-w");
-      const consList = opt.querySelectorAll(".con-inp-w");
-      const pros = Array.prototype.slice.call(prosList);
-      const cons = Array.prototype.slice.call(consList);
 
-      // sum each pros and cons
-      let prosw = 0;
-      pros.forEach((pro) => {
-        if (pro.value !== "") {
-          prosw = prosw + parseFloat(pro.value);
+  // calculate the percentage of pros if all the input weights are correct
+  calcBtn.addEventListener("click", function () {
+    const checkList = document.querySelectorAll(".pro-inp-w, .con-inp-w");
+    const checks = Array.prototype.slice.call(checkList);
+
+    let checkIndex = 0;
+    checks.forEach((check) => {
+      if (check.value !== "") {
+        if (0 > check.value) {
+          checkIndex = checkIndex + 1;
         }
-      });
-      console.log(opt.id, prosw);
-      let consw = 0;
-      cons.forEach((con) => {
-        if (con.value !== "") {
-          consw = consw + parseFloat(con.value);
+        if (10 < check.value) {
+          checkIndex = checkIndex + 1;
         }
-      });
-      console.log(opt.id, consw);
-      let tablew = 0;
-      if (consw > prosw) {
-        tablew = prosw / consw;
-      } else {
-        tablew = consw / prosw;
-        tablew = 1 - tablew;
       }
-      console.log(opt.id, tablew);
     });
+
+    if (checkIndex > 0) {
+      if (document.querySelector(".error-message") === null) {
+        const erM = document.createElement("p");
+        erM.classList.add("error-message");
+        erM.innerText = "Weight must be between 1 - 10!";
+        appDiv.appendChild(erM);
+        appDiv.style.height = "95vh";
+      }
+    } else {
+      if (document.querySelector(".error-message") !== null) {
+        const erM = document.querySelector(".error-message");
+        erM.parentNode.removeChild(erM);
+        appDiv.style.height = "90vh";
+      }
+      let optIndex = 0;
+      opts.forEach((opt) => {
+        const prosList = opt.querySelectorAll(".pro-inp-w");
+        const consList = opt.querySelectorAll(".con-inp-w");
+        const pros = Array.prototype.slice.call(prosList);
+        const cons = Array.prototype.slice.call(consList);
+
+        // sum each pros and cons
+        let prosw = 0;
+        pros.forEach((pro) => {
+          if (pro.value !== "") {
+            prosw = prosw + parseFloat(pro.value);
+          }
+        });
+
+        let consw = 0;
+        cons.forEach((con) => {
+          if (con.value !== "") {
+            consw = consw + parseFloat(con.value);
+          }
+        });
+        optIndex = optIndex + 1;
+        let tablew = 0;
+        tablew = consw + prosw;
+        tablew = prosw / tablew;
+        tablew = tablew * 100;
+        tablew = Math.round(tablew);
+        console.log(optIndex, tablew);
+      });
+    }
   });
 }
 
