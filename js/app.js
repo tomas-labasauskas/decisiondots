@@ -18,8 +18,6 @@ startBtn.addEventListener("click", page2);
 // FUNCTIONS
 
 function page2() {
-  everything.style.background = "#1b1d23";
-
   // creates a question title element
   const question = document.createElement("h1");
   question.innerText = qInput.value;
@@ -41,6 +39,7 @@ function page2() {
     } else {
       error.parentNode.removeChild(error);
     }
+    everything.style.background = "#1b1d23";
     howTo.parentNode.removeChild(howTo);
     qInput.parentNode.removeChild(qInput);
     startBtn.parentNode.removeChild(startBtn);
