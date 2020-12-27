@@ -7,6 +7,8 @@ const howTo = document.querySelector(".how-to");
 const qDiv = document.querySelector(".question");
 const header = document.querySelector(".desktop-nav");
 
+const finalDecision = [];
+
 // EVENT LISTENERS
 
 document.addEventListener("DOMContentLoaded", clearInput);
@@ -387,16 +389,66 @@ function page3Generator() {
         tablew = prosw / tablew;
         tablew = tablew * 100;
         tablew = Math.round(tablew);
-        console.log(optIndex, tablew);
 
-        const percentage = document.createElement("p");
-        percentage.innerText = tablew;
-        opt.appendChild(percentage);
+        const opTitle = opt.querySelector("h2").innerText;
+
+        let optionObj = { opTitle, tablew };
+        finalDecision.push(optionObj);
       });
+      page4();
     }
   });
 }
 
 function page4() {
-  console.log("hello there");
+  finalDecision.sort(function (a, b) {
+    return b.tablew - a.tablew;
+  });
+  console.log(finalDecision);
+
+  // remove the tables
+  const buttonsCon = document.querySelector(".buttons-container");
+  buttonsCon.parentNode.removeChild(buttonsCon);
+  const tables = document.querySelector(".pro-table-container");
+  tables.parentNode.removeChild(tables);
+  const calc = document.querySelector(".calc-btn");
+  calc.parentNode.removeChild(calc);
+
+  // add the results
+  const resultDiv = document.createElement("div");
+  resultDiv.classList.add("results");
+  appDiv.appendChild(resultDiv);
+
+  finalDecision.forEach((decision) => {
+    const result = document.createElement("div");
+    result.classList.add("result");
+    const title = document.createElement("h2");
+    title.innerText = decision.opTitle;
+    const barCon = document.createElement("div");
+    barCon.classList.add("bar-container");
+    const bar = document.createElement("div");
+    bar.classList.add("bar");
+    bar.style.width = decision.tablew + "%";
+    barCon.appendChild(bar);
+    result.appendChild(title);
+    result.appendChild(barCon);
+    resultDiv.appendChild(result);
+  });
+
+  // create refresh button
+  const refreshBtn = document.createElement("button");
+  refreshBtn.classList.add("refresh");
+  refreshBtn.innerText = "AGAIN";
+  appDiv.appendChild(refreshBtn);
+
+  playAgain();
+}
+
+function playAgain() {
+  const refreshBtn = document.querySelector(".refresh");
+  refreshBtn.addEventListener("click", doItAgain);
+
+  function doItAgain() {
+    location.reload();
+  }
 }
