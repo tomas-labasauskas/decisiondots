@@ -6,6 +6,7 @@ const startBtn = document.querySelector(".start");
 const howTo = document.querySelector(".how-to");
 const qDiv = document.querySelector(".question");
 const header = document.querySelector(".desktop-nav");
+const everything = document.querySelector("html");
 
 const finalDecision = [];
 
@@ -17,6 +18,8 @@ startBtn.addEventListener("click", page2);
 // FUNCTIONS
 
 function page2() {
+  everything.style.background = "#1b1d23";
+
   // creates a question title element
   const question = document.createElement("h1");
   question.innerText = qInput.value;
@@ -42,7 +45,6 @@ function page2() {
     qInput.parentNode.removeChild(qInput);
     startBtn.parentNode.removeChild(startBtn);
     qDiv.parentNode.removeChild(qDiv);
-    appDiv.style.height = "90vh";
     appDiv.id = "app-full";
     appDiv.appendChild(question);
     // create option div
@@ -133,19 +135,7 @@ function addOption() {
   optionName.appendChild(breakLineName);
   optionName.appendChild(opInpDivName);
   options.appendChild(optionName);
-  // expand app element
-  if (index === 4) {
-    appDiv.style.height = "90rem";
-  }
-  if (index === 5) {
-    appDiv.style.height = "95rem";
-  }
-  if (index === 6) {
-    appDiv.style.height = "100rem";
-  }
-  if (index === 7) {
-    appDiv.style.height = "105rem";
-  }
+
   // if there are 8 options - remove the add button
   let addBtn = document.querySelector("#add-button");
   if (index === 8) {
@@ -190,8 +180,6 @@ function page3Generator() {
   const optionsList = document.querySelectorAll(".inp");
   const allBtns = document.querySelectorAll("button");
   const options = Array.prototype.slice.call(optionsList);
-
-  appDiv.style.height = "90vh";
 
   optionsDiv.classList.add("page3");
 

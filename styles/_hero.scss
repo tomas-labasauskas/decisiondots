@@ -1,6 +1,8 @@
 .hero {
   #app-full {
     justify-content: start;
+    height: 100%;
+    padding-bottom: 2rem;
     .options {
       margin-top: 15rem;
     }
@@ -35,7 +37,8 @@
     #page3-button {
       border-radius: 6px;
       padding: 1.2rem 2.5rem;
-      margin-top: 8rem;
+      margin-top: 4rem;
+      margin-bottom: 1rem;
     }
 
     .page2-title {
