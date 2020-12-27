@@ -49,10 +49,6 @@ input {
   font-family: "Work Sans", sans-serif;
 }
 
-input:active {
-  border: none;
-}
-
 ::-webkit-input-placeholder {
   color: #6a7372;
 }
@@ -75,6 +71,12 @@ input:active {
 
 ::-ms-input-placeholder {
   color: #6a7372;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
 
 button {
