@@ -388,6 +388,10 @@ function page3Generator() {
         tablew = tablew * 100;
         tablew = Math.round(tablew);
         console.log(optIndex, tablew);
+
+        const percentage = document.createElement("p");
+        percentage.innerText = tablew;
+        opt.appendChild(percentage);
       });
     }
   });
