@@ -49,6 +49,9 @@ input {
   padding: 1rem 2rem;
   border-radius: 6px;
   font-family: "Work Sans", sans-serif;
+  &:active {
+    border: none;
+  }
 }
 ::placeholder {
   color: $text-inactive;

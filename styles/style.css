@@ -49,6 +49,10 @@ input {
   font-family: "Work Sans", sans-serif;
 }
 
+input:active {
+  border: none;
+}
+
 ::-webkit-input-placeholder {
   color: #6a7372;
 }
