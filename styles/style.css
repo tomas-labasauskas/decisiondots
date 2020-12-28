@@ -403,6 +403,7 @@ header {
 @media screen and (max-width: 730px) {
   .hero .page2-title {
     width: 96%;
+    text-align: center;
   }
 }
 
