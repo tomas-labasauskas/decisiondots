@@ -8,7 +8,7 @@
 html {
   font-size: 62.5%;
   font-family: "Work Sans", sans-serif;
-  background: #24292e;
+  background: #1b1d23;
   color: #ffffff;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -47,6 +47,8 @@ input {
   padding: 1rem 2rem;
   border-radius: 6px;
   font-family: "Work Sans", sans-serif;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.05);
 }
 
 ::-webkit-input-placeholder {
@@ -92,9 +94,11 @@ button {
   font-family: "Work Sans", sans-serif;
   font-weight: 600;
   color: #ffffff;
-  padding: 1rem 2.5rem;
+  padding: 1.4rem 2.5rem;
   font-size: 1.8rem;
   border-radius: 6px;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.05);
 }
 
 button:hover {
@@ -102,8 +106,43 @@ button:hover {
   cursor: pointer;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.089);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.349);
+  border-radius: 90px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.671);
+}
+
+.error-message {
+  color: #39c959;
+  font-size: 1.4rem;
+  margin: 1.5rem;
+}
+
+@media screen and (max-width: 580px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 header {
   background: #24292e;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.05);
 }
 
 .desktop-nav {
@@ -120,15 +159,15 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 5vh;
-  min-height: 4rem;
+  height: 6vh;
+  min-height: 5rem;
   background: #24292e;
   margin: 0rem 8rem;
   position: relative;
 }
 
 .desktop-nav #logo {
-  height: 2rem;
+  height: 1.2rem;
   left: 0;
   margin-bottom: 0.4rem;
 }
@@ -141,14 +180,13 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: absolute;
-  right: 0;
 }
 
 .desktop-nav .desktop-menu li {
   font-weight: 600;
   padding: 1rem;
   margin: 0rem 1rem;
+  font-size: 1.6rem;
 }
 
 .desktop-nav .desktop-menu li .inactive {
@@ -164,9 +202,115 @@ header {
   margin-right: 0rem;
 }
 
-footer {
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.hero .app {
+  margin-top: 8rem;
+  height: 15vh;
+  min-height: 13rem;
+  background: #1b1d23;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  width: 70rem;
+}
+
+.hero .app .main-title {
   width: 100%;
-  height: 2rem;
+  font-size: 3rem;
+  font-weight: 600;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero .app .question {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.hero .app .question input {
+  width: 100%;
+  border-radius: 6px 0px 0px 6px;
+}
+
+.hero .app .question .start {
+  border-radius: 0px 6px 6px 0px;
+  margin-left: 0.4rem;
+}
+
+.how-to {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.how-to img {
+  width: 70rem;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 730px) {
+  .hero .app {
+    width: 100%;
+  }
+  .hero .app .main-title {
+    width: 96%;
+  }
+  .hero .app .question {
+    width: 96%;
+  }
+  .how-to img {
+    width: 96%;
+    min-height: 50rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .hero .app .main-title {
+    font-size: 2rem;
+  }
 }
 
 .hero #app-full {
@@ -174,17 +318,12 @@ footer {
       -ms-flex-pack: start;
           justify-content: start;
   height: 100%;
-  padding-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
 
 .hero #app-full .options {
-  margin-top: 15rem;
-}
-
-.hero .app {
-  height: 22vh;
-  min-height: 18rem;
-  background: #1b1d23;
+  margin-top: 12rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -192,25 +331,48 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+}
+
+.hero #app-full .options .option {
+  width: 100%;
+}
+
+.hero #app-full .options .option .op-inp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: relative;
 }
 
-.hero .app .refresh {
-  margin-top: 2rem;
+.hero #app-full .options .option .op-inp .inp {
+  border-radius: 6px;
+  margin: 1rem;
+  width: 100%;
 }
 
-.hero .app .calc-btn {
-  margin-top: 2rem;
-  padding: 1.3rem 2rem;
+.hero #app-full .options .option .op-inp .numb {
+  padding: 1.1rem 1.7rem;
+  margin: 1rem;
+  background: #31363f;
+  border-radius: 90px;
 }
 
-.hero .app #add-button {
+.hero #app-full .options .option .break-line {
+  width: 96%;
+  height: 3px;
+  background: #24292e;
+  margin: 1.5rem;
+}
+
+.hero #add-button {
   background: #505356;
   font-weight: 600;
   margin: 2rem;
@@ -218,142 +380,27 @@ footer {
   border-radius: 6px;
 }
 
-.hero .app #add-button:hover {
+.hero #add-button:hover {
   background: #3b3e41;
 }
 
-.hero .app #page3-button {
-  border-radius: 6px;
-  padding: 1.2rem 2.5rem;
+.hero #page3-button {
   margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
-.hero .app .page2-title {
+.hero .page2-title {
   font-size: 2.2rem;
   padding: 2rem 4rem;
   background: #24292e;
   border-radius: 6px;
   position: absolute;
-  top: 40px;
+  top: 20px;
 }
 
-.hero .app .error-message {
-  color: #39c959;
-  font-size: 1.4rem;
-  margin: 1.5rem;
-}
-
-.hero .app input {
-  width: 60rem;
-  border-radius: 6px 0px 0px 6px;
-}
-
-.hero .app .start {
-  border-radius: 0px 6px 6px 0px;
-  margin-left: 0.4rem;
-}
-
-.hero .how-to {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 7rem 0rem;
-}
-
-.hero .how-to .line {
-  height: 4rem;
-  width: 3px;
-  background: #1b1d23;
-  -webkit-transform: translateX(-3px);
-          transform: translateX(-3px);
-}
-
-.hero .how-to .step {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 35rem;
-  text-align: center;
-  -webkit-transform: translateX(-3px);
-          transform: translateX(-3px);
-  margin: 0.5rem 0rem;
-}
-
-.hero .how-to .step .number {
-  padding: 1.1rem 1.7rem;
-  background: #31363f;
-  border-radius: 90px;
-}
-
-.hero .how-to .step .desc {
-  padding: 1rem;
-  -webkit-transform: translateY(2px);
-          transform: translateY(2px);
-}
-
-.hero .how-to .step1 {
-  margin-top: 4rem;
-}
-
-.options {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.options .option .op-inp {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  position: relative;
-}
-
-.options .option .op-inp .inp {
-  border-radius: 6px;
-  margin: 1rem;
-}
-
-.options .option .op-inp .numb {
-  padding: 1.1rem 1.7rem;
-  margin: 1rem;
-  background: #31363f;
-  border-radius: 90px;
-}
-
-.options .option .break-line {
-  width: 96%;
-  height: 3px;
-  background: #24292e;
-  margin: 1.5rem;
+.calc-btn {
+  margin-top: 3rem;
+  padding: 1.3rem 2rem;
 }
 
 .options.page3 {
@@ -402,7 +449,7 @@ footer {
 }
 
 .options.page3 .pro-table-container .pro-table {
-  width: 65rem;
+  width: 100%;
   height: 60rem;
   margin: 0rem 2rem;
   background: #24292e;
@@ -501,6 +548,19 @@ footer {
   border-radius: 0px 6px 6px 0px;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+}
+
+@media screen and (max-width: 580px) {
+  .options.page3 .pro-table-container .pro-table .pro-con {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.refresh {
+  margin-top: 2rem;
 }
 
 .results {

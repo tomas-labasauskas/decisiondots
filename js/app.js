@@ -1,5 +1,6 @@
 // SELECTORS
 
+const mainTitle = document.querySelector(".main-title");
 const appDiv = document.querySelector(".app");
 const qInput = document.querySelector(".question input");
 const startBtn = document.querySelector(".start");
@@ -39,7 +40,7 @@ function page2() {
     } else {
       error.parentNode.removeChild(error);
     }
-    everything.style.background = "#1b1d23";
+    mainTitle.parentNode.removeChild(mainTitle);
     howTo.parentNode.removeChild(howTo);
     qInput.parentNode.removeChild(qInput);
     startBtn.parentNode.removeChild(startBtn);
@@ -51,40 +52,11 @@ function page2() {
     options.classList.add("options");
     appDiv.appendChild(options);
     // add two options
-    // op 1
-    const option1 = document.createElement("div");
-    option1.classList.add("option");
-    const opInpDiv1 = document.createElement("div");
-    opInpDiv1.classList.add("op-inp");
-    const input1 = document.createElement("input");
-    input1.classList.add("inp");
-    input1.placeholder = "Option #1 ...";
-    const n1 = document.createElement("h2");
-    n1.classList.add("numb");
-    n1.innerText = "1";
-    opInpDiv1.appendChild(n1);
-    opInpDiv1.appendChild(input1);
-    option1.appendChild(opInpDiv1);
-    options.appendChild(option1);
-    // op 2
-    const option2 = document.createElement("div");
-    option2.classList.add("option");
-    //container for input and number
-    const opInpDiv2 = document.createElement("div");
-    opInpDiv2.classList.add("op-inp");
-    const input2 = document.createElement("input");
-    input2.classList.add("inp");
-    input2.placeholder = "Option #2 ...";
-    const n2 = document.createElement("h2");
-    n2.classList.add("numb");
-    n2.innerText = "2";
-    const breakLine = document.createElement("div");
-    breakLine.classList.add("break-line");
-    opInpDiv2.appendChild(n2);
-    opInpDiv2.appendChild(input2);
-    option2.appendChild(breakLine);
-    option2.appendChild(opInpDiv2);
-    options.appendChild(option2);
+    addOption();
+    const breakLine = document.querySelector(".break-line");
+    breakLine.parentNode.removeChild(breakLine);
+    addOption();
+
     // add a button for adding more options
     const addBtn = document.createElement("button");
     addBtn.id = "add-button";
@@ -100,10 +72,6 @@ function page2() {
     // create the third page
     page3Btn.addEventListener("click", page3Check);
   }
-}
-
-function clearInput() {
-  qInput.value = "";
 }
 
 // add option
@@ -123,6 +91,7 @@ function addOption() {
   opInpDivName.classList.add("op-inp");
   inputName = document.createElement("input");
   inputName.classList.add("inp");
+  inputName.maxLength = 55;
   inputName.placeholder = "Option #" + index + " ...";
   nName = document.createElement("h2");
   nName.classList.add("numb");
@@ -245,6 +214,7 @@ function page3Generator() {
       const proInp = document.createElement("input");
       proInp.classList.add("pro-inp");
       proInp.placeholder = "Pro ...";
+      proInp.maxLength = 15;
       pro.appendChild(proInp);
       const proInpW = document.createElement("input");
       proInpW.classList.add("pro-inp-w");
@@ -262,6 +232,7 @@ function page3Generator() {
       const conInp = document.createElement("input");
       conInp.classList.add("con-inp");
       conInp.placeholder = "Con ...";
+      conInp.maxLength = 15;
       con.appendChild(conInp);
       const conInpW = document.createElement("input");
       conInpW.classList.add("con-inp-w");
@@ -438,4 +409,8 @@ function playAgain() {
   function doItAgain() {
     location.reload();
   }
+}
+
+function clearInput() {
+  qInput.value = "";
 }
