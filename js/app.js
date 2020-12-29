@@ -306,19 +306,60 @@ function page3Generator() {
       }
     });
 
-    if (checkIndex > 0) {
-      if (document.querySelector(".error-message") === null) {
-        const erM = document.createElement("p");
-        erM.classList.add("error-message");
-        erM.innerText = "Weight must be between 1 - 10!";
-        appDiv.appendChild(erM);
-        appDiv.style.height = "95vh";
+    let PnullCount = 0;
+    let CnullCount = 0;
+    let isNull = 0;
+    opts.forEach((opt) => {
+      const PwInps = opt.querySelectorAll(".pro-inp-w");
+      const PnullChecks = Array.prototype.slice.call(PwInps);
+      PnullChecks.forEach((nullCheck) => {
+        if (nullCheck.value !== "") {
+          PnullCount = PnullCount + 1;
+        }
+      });
+      const CwInps = opt.querySelectorAll(".con-inp-w");
+      const CnullChecks = Array.prototype.slice.call(CwInps);
+      CnullChecks.forEach((nullCheck) => {
+        if (nullCheck.value !== "") {
+          CnullCount = CnullCount + 1;
+        }
+      });
+      if (PnullCount < 1 || CnullCount < 1) {
+        isNull = 1;
+      }
+      PnullCount = 0;
+      CnullCount = 0;
+    });
+
+    if (isNull === 1 || checkIndex > 0) {
+      if (checkIndex > 0) {
+        if (document.querySelector(".error-message") !== null) {
+          const erM = document.querySelector(".error-message");
+          erM.parentNode.removeChild(erM);
+        }
+        if (document.querySelector(".error-message") === null) {
+          const erM = document.createElement("p");
+          erM.classList.add("error-message");
+          erM.innerText = "Weight must be between 1 - 10!";
+          appDiv.appendChild(erM);
+        }
+      } else {
+        if (document.querySelector(".error-message") !== null) {
+          const erM = document.querySelector(".error-message");
+          erM.parentNode.removeChild(erM);
+        }
+        if (document.querySelector(".error-message") === null) {
+          const erM = document.createElement("p");
+          erM.classList.add("error-message");
+          erM.innerText = "You must enter the weight!";
+          appDiv.appendChild(erM);
+        }
       }
     } else {
       if (document.querySelector(".error-message") !== null) {
         const erM = document.querySelector(".error-message");
         erM.parentNode.removeChild(erM);
-        appDiv.style.height = "90vh";
+        appDiv.style.height = "80vh";
       }
       let optIndex = 0;
       opts.forEach((opt) => {
@@ -362,7 +403,6 @@ function page4() {
   finalDecision.sort(function (a, b) {
     return b.tablew - a.tablew;
   });
-  console.log(finalDecision);
 
   // remove the tables
   const buttonsCon = document.querySelector(".buttons-container");
