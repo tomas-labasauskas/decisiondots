@@ -4,11 +4,13 @@
 .results {
   display: flex;
   flex-direction: column;
+  width: 100%;
   .result {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     h2 {
       font-size: 1.8rem;
       width: 100%;
@@ -23,7 +25,7 @@
       background: $dark;
       border-radius: 90px;
       margin-right: 0.5rem;
-      margin-left: 0.5;
+      margin-left: 0.5rem;
       margin-top: 0.5rem;
       margin-bottom: 2rem;
       .bar {
@@ -32,5 +34,11 @@
         border-radius: 90px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .results {
+    width: 96%;
   }
 }

@@ -432,7 +432,7 @@ header {
       -ms-flex-direction: column;
           flex-direction: column;
   position: absolute;
-  left: -60px;
+  left: -70px;
   top: 0px;
 }
 
@@ -460,7 +460,6 @@ header {
 .options.page3 .pro-table-container .pro-table {
   width: 100%;
   height: 60rem;
-  margin: 0rem 2rem;
   background: #24292e;
   border-radius: 6px;
   display: -webkit-box;
@@ -559,12 +558,96 @@ header {
   -moz-appearance: textfield;
 }
 
-@media screen and (max-width: 580px) {
-  .options.page3 .pro-table-container .pro-table .pro-con {
+@media screen and (max-width: 860px) {
+  .options.page3 {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .options.page3 .buttons-container {
+    position: relative;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    left: 0;
+    margin-bottom: 2rem;
+    background: #24292e;
+    border-radius: 6px;
+    width: 96%;
+    -webkit-box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05), 0px 30px 30px rgba(0, 0, 0, 0.05);
+  }
+  .options.page3 .buttons-container #btn-toggle {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+    padding: 0.8rem 1.4rem;
+  }
+  .options.page3 .pro-table-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .options.page3 .pro-table-container .pro-table {
+    margin: 0rem;
+    width: 96%;
+  }
+  .options.page3 .pro-table-container .pro-table .pro-con {
+    margin-top: 1rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+  .options.page3 .pro-table-container .pro-table .pro-con .pros,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .pro,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .con,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .pro,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .con {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0rem;
+    margin-bottom: 2.5rem;
+  }
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .pro .pro-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .pro .con-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .con .pro-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .con .con-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .pro .pro-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .pro .con-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .con .pro-inp,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .con .con-inp {
+    margin: 0.2rem;
+    width: 55%;
+  }
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .pro .pro-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .pro .con-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .con .pro-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .pros .con .con-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .pro .pro-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .pro .con-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .con .pro-inp-w,
+  .options.page3 .pro-table-container .pro-table .pro-con .cons .con .con-inp-w {
+    width: 35%;
+    margin: 0.2rem;
   }
 }
 
@@ -580,6 +663,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .results .result {
@@ -596,6 +680,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: 100%;
 }
 
 .results .result h2 {
@@ -613,7 +698,7 @@ header {
   background: #24292e;
   border-radius: 90px;
   margin-right: 0.5rem;
-  margin-left: 0.5;
+  margin-left: 0.5rem;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
 }
@@ -622,5 +707,11 @@ header {
   height: 10px;
   background: #39c959;
   border-radius: 90px;
+}
+
+@media screen and (max-width: 730px) {
+  .results {
+    width: 96%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
