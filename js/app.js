@@ -272,6 +272,7 @@ function page3Generator() {
   const optsList = document.querySelector(".pro-table-container").children;
   const opts = Array.prototype.slice.call(optsList);
 
+  // funcionality of toggle buttons on the weight page
   optBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       optBtns.forEach((btn) => {
